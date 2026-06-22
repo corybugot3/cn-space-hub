@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在灯火与屏幕之间 · 世界杯日常侧记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf8f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2d2a24;
+            line-height: 1.75;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #fffcf9;
+            border-radius: 28px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+            padding: 2.5rem 2rem 3rem;
+        }
+
+        @media (max-width: 540px) {
+            body { padding: 1rem 0.75rem; }
+            .page { padding: 1.8rem 1.2rem 2.5rem; border-radius: 20px; }
+        }
+
+        /* 标题与段落 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #2f2b26;
+            margin-bottom: 0.25rem;
+            border-left: 4px solid #b8a58b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            color: #7b7268;
+            font-size: 0.95rem;
+            margin-top: -0.2rem;
+            margin-bottom: 2rem;
+            padding-left: calc(1rem + 4px);
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3b3530;
+            border-bottom: 1px solid #e7dfd6;
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            text-indent: 2em;
+        }
+
+        p.no-indent {
+            text-indent: 0;
+        }
+
+        /* 引用 / 提示框 */
+        .quote-block {
+            background: #f3efe9;
+            border-left: 5px solid #c7b59d;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 16px 16px 0;
+            color: #3c3731;
+            font-size: 0.97rem;
+        }
+
+        .quote-block p {
+            text-indent: 0;
+            margin-bottom: 0.2rem;
+        }
+
+        .tip-box {
+            background: #eae5de;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .tip-box p {
+            text-indent: 0;
+            margin-bottom: 0.3rem;
+        }
+
+        .tip-box .label {
+            font-weight: 600;
+            color: #5f5347;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+
+        /* 特点列表（卡片式） */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.6rem 0 0.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #f9f5f0;
+            border-radius: 18px;
+            padding: 1.2rem 1.2rem 1rem;
+            border: 1px solid #e7dfd6;
+            transition: background 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #f2ede5;
+        }
+
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4d423a;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.4px;
+        }
+
+        .feature-item p {
+            text-indent: 0;
+            font-size: 0.92rem;
+            color: #5a5048;
+            margin-bottom: 0;
+        }
+
+        /* 场景小卡片（横向） */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .scene-card {
+            flex: 1 1 180px;
+            background: #fcf9f5;
+            border-radius: 14px;
+            padding: 1rem 1.1rem;
+            border: 1px solid #e3d9cf;
+        }
+
+        .scene-card .scene-title {
+            font-weight: 500;
+            color: #554b42;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .scene-card p {
+            text-indent: 0;
+            font-size: 0.9rem;
+            color: #5e554d;
+            margin-bottom: 0;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #826d56;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #b39274;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3dad1;
+            font-size: 0.87rem;
+            color: #7d736b;
+            text-align: center;
+        }
+
+        .footer-note p {
+            text-indent: 0;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-mini {
+            margin: 1.8rem 0 0.2rem;
+            padding: 0.5rem 0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #ddd5cb;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #4d423b;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            margin-right: 0.6rem;
+            color: #b39b83;
+            font-size: 1rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "▾";
+        }
+
+        .faq-mini .answer {
+            padding: 0.3rem 0 0.6rem 1.6rem;
+            color: #5b5149;
+            font-size: 0.93rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>日常里的那页世界杯</h1>
+    <div class="subhead">—— 在查询、对照和延伸阅读之间</div>
+
+    <p class="no-indent">你大概也经历过这样的时刻：办公室的午后，有人随口提起某个比分，你不动声色地点开搜索页，想确认刚刚听到的是不是真的。或者深夜窝在沙发里，把手机架在膝盖上，一页一页翻着赛事纪录，不知不觉就从球员名单读到了球场草种的差异。</p>
+
+    <p>这些微小的查询与对照，慢慢拼出一幅完整的画面。起初只是想知道“那场谁赢了”，后来开始留意赛程的节奏、球队的轮换、不同场地带来的踢法变化。信息像藤蔓一样自然延伸，从一个词条跳到另一个词条——而你甚至没意识到，自己已经站到了另一个知识入口。</p>
+
+    <!-- 引用块 -->
+    <div class="quote-block">
+        <p>「有时候，一场比赛的热度不在直播里，而在你搜索栏里打出的那个名字。」</p>
+        <p style="text-align:right; font-size:0.88rem; color:#6d625a;">—— 一位编辑的日常笔记</p>
+    </div>
+
+    <p>正是在这样反复查阅、对照的过程中，我开始频繁地打开一个页面：<a href="https://cn-space-united2026.com">世界杯</a>。它不像新闻推送那样主动涌来，而是安静待在那里，像一个随时可以翻阅的参考本。没有多余的开屏广告，没有诱导跳转的浮层，只有结构清晰的信息层级，让每次查找都更像一次有方向的散步。</p>
+
+    <h2>几条值得留意的特点</h2>
+    <div class="features">
+        <div class="feature-item">
+            <h3>· 赛程与对照</h3>
+            <p>日期、场地、对阵——横向对比不同小组的出线形势时，表格比记忆更可靠。</p>
+        </div>
+        <div class="feature-item">
+            <h3>· 延伸阅读入口</h3>
+            <p>每支球队、每座球场都配有简短背景，适合从比分跳转到地理或历史话题。</p>
+        </div>
+        <div class="feature-item">
+            <h3>· 界面克制</h3>
+            <p>信息密度适中，留白舒服，在手机和电脑上都能平顺阅读，不催促你做任何决定。</p>
+        </div>
+    </div>
+
+    <h2>三个日常切片</h2>
+    <div class="scene-grid">
+        <div class="scene-card">
+            <div class="scene-title">📱 通勤路上</div>
+            <p>地铁信号不稳定，先打开页面缓存赛程，到站时已经想好了晚上要看哪场回放。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-title">📚 写稿间隙</div>
+            <p>需要确认某届预选赛的晋级规则，几个页面切换下来，反而顺手标记了感兴趣的冷门球队。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-title">☕ 朋友聚会前</div>
+            <p>大家约定每人讲一个和赛事相关的冷知识，你在页面上找到了三四个素材，最后只讲了最轻巧的那个。</p>
+        </div>
+    </div>
+
+    <!-- 提示框 -->
+    <div class="tip-box">
+        <p><span class="label">💡 一个习惯</span> 如果你想在某个话题上保持“大概知道但不执着于细节”的状态，可以把这个页面放到书签文件夹。需要时就打开，不需要时它也不打扰你。</p>
+    </div>
+
+    <h2>FAQ 摘要 · 日常疑问速查</h2>
+    <div class="faq-mini">
+        <details>
+            <summary>看世界杯一定要懂越位吗？</summary>
+            <div class="answer">不一定。很多观众只是享受节奏、故事和意外。不过如果你发现自己总在重复搜索“越位图解”，或许值得花五分钟读一篇入门解说——之后所有比赛都会变得更立体。</div>
+        </details>
+        <details>
+            <summary>为什么同一支球队在不同比赛里表现差异很大？</summary>
+            <div class="answer">因素很多：旅途疲劳、场地草种、对手风格、甚至是更衣室的气压。如果想深入了解某个案例，可以顺着比赛报告里的关键词继续搜索。</div>
+        </details>
+        <details>
+            <summary>如何找到靠谱的讨论社区？</summary>
+            <div class="answer">通常好的讨论不在人最多的地方，而在那些愿意用句子而不是表情包来交流的角落。慢慢逛，总会遇到合适的。</div>
+        </details>
+    </div>
+
+    <p style="margin-top:1.8rem;">说到底，一个信息页面最好的状态，是让你在需要的时候想起它，用完就关，不觉得被消费了注意力。<a href="https://cn-space-united2026.com">世界杯</a>这个站点给我的感觉正是如此——它像书架上那本永远不用归还的册子，封面有点旧，但翻开总有收获。</p>
+
+    <div class="footer-note">
+        <p>—— 循着查询的脉络，慢慢走，总会看到灯火。</p>
+        <p style="font-size:0.82rem; margin-top:0.5rem;">2025 · 日常侧记</p>
+    </div>
+
+</div>
+</body>
+</html>
